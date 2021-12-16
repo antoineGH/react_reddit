@@ -7,7 +7,6 @@ import {
   getIsLoadingPosts,
   getHasErrorPosts,
 } from 'selectors/posts'
-import { Post } from '../../types/post'
 
 const PostsComponent = (): JSX.Element => {
   const dispatch = useAppDispatch()
@@ -29,8 +28,10 @@ const PostsComponent = (): JSX.Element => {
       ) : isLoadingPosts ? (
         <p>loading Posts</p>
       ) : (
-        Object.keys(posts).map(post => {
-          return <PostComponent />
+        Object.values(posts).map(post => {
+          console.log('YAYA')
+          console.log(post)
+          return <PostComponent post={post} />
         })
       )}
     </>

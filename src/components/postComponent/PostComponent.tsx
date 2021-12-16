@@ -4,8 +4,12 @@ import RatePostComponent from 'components/ratePostComponent/RatePostComponent'
 import ImagePostComponent from 'components/imagePostComponent/ImagePostComponent'
 import FooterPostComponent from 'components/footerPostComponent/FooterPostComponent'
 import './postComponent.css'
+import { PostArray } from '../../types/post'
 
-const PostComponent = (): JSX.Element => {
+type Props = { post: PostArray }
+const PostComponent = (props: Props): JSX.Element => {
+  const { post } = props
+  console.log(post)
   return (
     <>
       <Card className="card-post">

@@ -1,23 +1,10 @@
 export type vote = string | boolean
 
-export interface Posts {}
-
-export interface PostsSlice {
-  posts: Posts
-  isLoadingPosts: boolean
-  hasErrorPosts: boolean
-}
-
-export interface DataBloated {
-  kind: string
-  data: Data
-}
-
-export interface Post {
+export interface PostArray {
   approved_at_utc: null
   subreddit: string
   selftext: string
-  author_fullname: string
+  user_reports: any[]
   saved: boolean
   mod_reason_title: null
   gilded: number
@@ -27,7 +14,7 @@ export interface Post {
   subreddit_name_prefixed: string
   hidden: boolean
   pwls: number
-  link_flair_css_class: null
+  link_flair_css_class: null | string
   downs: number
   thumbnail_height: number
   top_awarded_type: null
@@ -44,13 +31,13 @@ export interface Post {
   thumbnail_width: number
   author_flair_template_id: null
   is_original_content: boolean
-  user_reports: any[]
-  secure_media: null
+  author_fullname: string
+  secure_media: Media | null
   is_reddit_media_domain: boolean
   is_meta: boolean
   category: null
   secure_media_embed: Gildings
-  link_flair_text: null
+  link_flair_text: null | string
   can_mod_post: boolean
   score: number
   approved_by: null
@@ -65,6 +52,7 @@ export interface Post {
   content_categories: null
   is_self: boolean
   mod_note: null
+  crosspost_parent_list?: PostArray[]
   created: number
   link_flair_type: string
   wls: number
@@ -85,7 +73,7 @@ export interface Post {
   pinned: boolean
   over_18: boolean
   preview: Preview
-  all_awardings: any[]
+  all_awardings: AllAwarding[]
   awarders: any[]
   media_only: boolean
   can_gild: boolean
@@ -113,6 +101,7 @@ export interface Post {
   contest_mode: boolean
   mod_reports: any[]
   author_patreon_flair: boolean
+  crosspost_parent?: string
   author_flair_text_color: null
   permalink: string
   parent_whitelist_status: string
@@ -121,11 +110,68 @@ export interface Post {
   subreddit_subscribers: number
   created_utc: number
   num_crossposts: number
-  media: null
+  media: Media | null
   is_video: boolean
+  link_flair_template_id?: string
+}
+
+export interface AllAwarding {
+  giver_coin_reward: number
+  subreddit_id: null
+  is_new: boolean
+  days_of_drip_extension: number
+  coin_price: number
+  id: string
+  penny_donate: number
+  award_sub_type: string
+  coin_reward: number
+  icon_url: string
+  days_of_premium: number
+  tiers_by_required_awardings: null
+  resized_icons: ResizedIcon[]
+  icon_width: number
+  static_icon_width: number
+  start_date: null
+  is_enabled: boolean
+  awardings_required_to_grant_benefits: null
+  description: string
+  end_date: null
+  subreddit_coin_reward: number
+  count: number
+  static_icon_height: number
+  name: string
+  resized_static_icons: ResizedIcon[]
+  icon_format: string
+  icon_height: number
+  penny_price: number
+  award_type: string
+  static_icon_url: string
+}
+
+export interface ResizedIcon {
+  url: string
+  width: number
+  height: number
 }
 
 export interface Gildings {}
+
+export interface Media {
+  reddit_video: RedditVideo
+}
+
+export interface RedditVideo {
+  bitrate_kbps: number
+  fallback_url: string
+  height: number
+  width: number
+  scrubber_media_url: string
+  dash_url: string
+  duration: number
+  hls_url: string
+  is_gif: boolean
+  transcoding_status: string
+}
 
 export interface Preview {
   images: Image[]
@@ -133,16 +179,23 @@ export interface Preview {
 }
 
 export interface Image {
-  source: Source
-  resolutions: Source[]
+  source: ResizedIcon
+  resolutions: ResizedIcon[]
   variants: Gildings
   id: string
 }
 
-export interface Source {
-  url: string
-  width: number
-  height: number
+export interface Posts {}
+
+export interface PostsSlice {
+  posts: Posts
+  isLoadingPosts: boolean
+  hasErrorPosts: boolean
+}
+
+export interface DataBloated {
+  kind: string
+  data: Data
 }
 
 export interface Data {
@@ -255,24 +308,4 @@ export interface Data {
   num_crossposts: number
   media: null
   is_video: boolean
-}
-
-export interface Gildings {}
-
-export interface Preview {
-  images: Image[]
-  enabled: boolean
-}
-
-export interface Image {
-  source: Source
-  resolutions: Source[]
-  variants: Gildings
-  id: string
-}
-
-export interface Source {
-  url: string
-  width: number
-  height: number
 }
