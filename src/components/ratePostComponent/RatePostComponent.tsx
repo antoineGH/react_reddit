@@ -1,22 +1,24 @@
+import { useState } from 'react'
 import { Row } from 'antd'
+import { vote } from 'types/post'
+import RateCount from './rateCount/RateCount'
+import RateUp from './rateUp/RateUp'
+import RateDown from './rateDown/RateDown'
 import './ratePostComponent.css'
-import { UpSquareOutlined, DownSquareOutlined } from '@ant-design/icons'
 
 const RatePostComponent = (): JSX.Element => {
+  const [vote, setVote] = useState<vote>('')
+
   return (
     <>
       <Row>
-        <UpSquareOutlined
-          style={{ fontSize: '1.2rem', color: 'var(--color-text-secondary)' }}
-        />
+        <RateUp vote={vote} setVote={setVote} />
       </Row>
       <Row>
-        <p className="rate-count">38k</p>
+        <RateCount count="38k" vote={vote} />
       </Row>
       <Row>
-        <DownSquareOutlined
-          style={{ fontSize: '1.2rem', color: 'var(--color-text-secondary)' }}
-        />
+        <RateDown vote={vote} setVote={setVote} />
       </Row>
     </>
   )

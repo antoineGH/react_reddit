@@ -9,21 +9,21 @@ const FooterPostComponent = (): JSX.Element => {
         <Col
           span={8}
           className="footer-author"
-          style={{ backgroundColor: 'pink' }}
+          // style={{ backgroundColor: 'pink' }}
         >
           <p>NewOldSchoool</p>
         </Col>
         <Col
           className="footer-time"
           span={8}
-          style={{ backgroundColor: 'orange' }}
+          // style={{ backgroundColor: 'orange' }}
         >
           <p className="footer-detail">20 hours ago</p>
         </Col>
         <Col
           className="footer-comments"
           span={8}
-          style={{ backgroundColor: 'lightcyan' }}
+          // style={{ backgroundColor: 'lightcyan' }}
         >
           <MessageOutlined style={{ color: 'var(--color-text-secondary)' }} />
           <p className="footer-detail">486</p>
