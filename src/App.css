@@ -1,1 +1,40 @@
+/* ANTD */
+
 @import '~antd/dist/antd.css';
+
+.class-header {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.class-content {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* COLORS & FONTS */
+
+:root {
+  --color-text-header: #444;
+  --color-branding: #ff4500;
+}
+
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-header);
+}
+
+h1 span {
+  color: var(--color-branding);
+}

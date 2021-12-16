@@ -1,0 +1,9 @@
+.class-image {
+  max-width: 32px;
+  max-height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0.5rem;
+}
