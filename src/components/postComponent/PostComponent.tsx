@@ -9,34 +9,22 @@ const PostComponent = (): JSX.Element => {
   return (
     <>
       <Card className="card-post">
-        <Row
-        // style={{ backgroundColor: 'lightblue' }}
-        >
-          <Col
-            // style={{ backgroundColor: 'orange' }}
-            span={2}
-            className="col-rate"
-          >
+        <Row>
+          <Col span={2} className="col-rate">
             <RatePostComponent />
           </Col>
           <Col span={22}>
-            <Row
-            //  style={{ backgroundColor: 'pink' }}
-            >
+            <Row>
               <Col>
                 <TitlePostComponent />
               </Col>
             </Row>
-            <Row
-            // style={{ backgroundColor: 'blue' }}
-            >
+            <Row>
               <Col>
                 <ImagePostComponent />
               </Col>
             </Row>
-            <Row
-            // style={{ backgroundColor: 'yellow' }}
-            >
+            <Row>
               <FooterPostComponent />
             </Row>
           </Col>
