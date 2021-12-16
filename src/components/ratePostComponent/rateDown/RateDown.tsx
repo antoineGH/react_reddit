@@ -21,7 +21,9 @@ const RateDown = (props: Props): JSX.Element => {
     <DownSquareOutlined
       onClick={() => handleVote()}
       style={{ fontSize: '1.2rem', color: 'var(--color-text-secondary)' }}
-      className={typeof vote === 'boolean' ? (vote ? 'green' : 'red') : 'plain'}
+      className={
+        typeof vote === 'boolean' ? (vote ? 'plain' : 'down-red') : 'plain'
+      }
     />
   )
 }

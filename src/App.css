@@ -31,6 +31,8 @@
   --color-text-secondary: #717171;
   --color-border: #e6e6e6;
   --color-purple: #3d5af1;
+  --color-success: #45b81f;
+  --color-alert: #ff304f;
 }
 
 body {

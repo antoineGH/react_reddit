@@ -21,7 +21,9 @@ const RateUp = (props: Props): JSX.Element => {
     <UpSquareOutlined
       onClick={() => handleVote()}
       style={{ fontSize: '1.2rem', color: 'var(--color-text-secondary)' }}
-      className={typeof vote === 'boolean' ? (vote ? 'green' : 'red') : 'plain'}
+      className={
+        typeof vote === 'boolean' ? (vote ? 'up-green' : 'plain') : 'plain'
+      }
     />
   )
 }

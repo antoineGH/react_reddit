@@ -8,3 +8,19 @@
   font-size: 1.1rem;
   margin: 0.5rem 0rem;
 }
+
+.rate-count.green {
+  color: var(--color-success);
+}
+
+.rate-count.red {
+  color: var(--color-alert);
+}
+
+.up-green {
+  color: var(--color-success) !important;
+}
+
+.down-red {
+  color: var(--color-alert) !important;
+}
