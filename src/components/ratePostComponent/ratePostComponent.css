@@ -1,0 +1,10 @@
+.rate-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: var(--color-text-secondary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0.5rem auto;
+}

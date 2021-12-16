@@ -1,5 +1,12 @@
+import PostComponent from 'components/postComponent/PostComponent'
+
 const PostsComponent = (): JSX.Element => {
-  return <>PostsComponent</>
+  return (
+    <>
+      <PostComponent />
+      <PostComponent />
+    </>
+  )
 }
 
 export default PostsComponent
