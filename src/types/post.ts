@@ -1,5 +1,11 @@
 export type vote = string | boolean
 
+export interface PostsSlice {
+  posts: Posts
+  isLoadingPosts: boolean
+  hasErrorPosts: boolean
+}
+
 export interface Posts {}
 
 export interface Post {
@@ -79,12 +85,6 @@ export interface Image {
   resolutions: ResizedIcon[]
   variants: Gildings
   id: string
-}
-
-export interface PostsSlice {
-  posts: Posts
-  isLoadingPosts: boolean
-  hasErrorPosts: boolean
 }
 
 export interface DataBloated {
