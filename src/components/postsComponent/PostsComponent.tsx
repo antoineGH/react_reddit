@@ -26,7 +26,7 @@ const PostsComponent = (): JSX.Element => {
         <p>loading Posts</p>
       ) : (
         Object.values(posts).map(post => {
-          return <PostComponent post={post} />
+          return <PostComponent key={post.id} post={post} />
         })
       )}
     </>

@@ -9,6 +9,7 @@ export interface PostsSlice {
 export interface Posts {}
 
 export interface Post {
+  id: string
   author: string
   ups: number
   title: string

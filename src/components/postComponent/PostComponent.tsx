@@ -14,10 +14,10 @@ const PostComponent = (props: Props): JSX.Element => {
     <>
       <Card className="card-post">
         <Row>
-          <Col span={2} className="col-rate">
+          <Col span={3} className="col-rate">
             <RatePostComponent ups={post.ups} />
           </Col>
-          <Col span={22}>
+          <Col span={21}>
             <Row>
               <Col>
                 <TitlePostComponent title={post.title} />

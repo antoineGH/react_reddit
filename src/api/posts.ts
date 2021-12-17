@@ -8,6 +8,7 @@ export const getPosts = async (): Promise<Posts> => {
     if (json) {
       const posts = json.data.children.map((elem: DataBloated) => {
         return {
+          id: elem?.data?.id,
           author: elem?.data?.author,
           ups: elem?.data?.ups,
           title: elem?.data?.title,
