@@ -9,27 +9,32 @@ import { PostArray } from '../../types/post'
 type Props = { post: PostArray }
 const PostComponent = (props: Props): JSX.Element => {
   const { post } = props
-  console.log(post)
+
   return (
     <>
       <Card className="card-post">
         <Row>
           <Col span={2} className="col-rate">
-            <RatePostComponent />
+            <RatePostComponent ups={post.ups} />
           </Col>
           <Col span={22}>
             <Row>
               <Col>
-                <TitlePostComponent />
+                <TitlePostComponent title={post.title} />
               </Col>
             </Row>
             <Row>
               <Col>
-                <ImagePostComponent />
+                <ImagePostComponent
+                  image={post.preview?.images[0]?.source?.url}
+                />
               </Col>
             </Row>
             <Row>
-              <FooterPostComponent />
+              <FooterPostComponent
+                author={post.author}
+                num_comments={post.num_comments}
+              />
             </Row>
           </Col>
         </Row>

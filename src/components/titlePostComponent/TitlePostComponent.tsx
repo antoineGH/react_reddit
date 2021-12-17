@@ -1,11 +1,9 @@
 import './titlePostComponent.css'
 
-const TitlePostComponent = (): JSX.Element => {
-  return (
-    <p className="post-title">
-      After 30 years of mortgage payments. I paid it off today. It’s all ours
-    </p>
-  )
+type Props = { title: string | null }
+const TitlePostComponent = (props: Props): JSX.Element => {
+  const { title } = props
+  return <p className="post-title">{title}</p>
 }
 
 export default TitlePostComponent

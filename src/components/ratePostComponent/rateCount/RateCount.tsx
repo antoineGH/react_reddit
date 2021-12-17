@@ -1,6 +1,6 @@
 import { vote } from '../../../types/post'
 
-type Props = { count: string; vote: vote }
+type Props = { count: number; vote: vote }
 
 const RateCount = (props: Props): JSX.Element => {
   const { count, vote } = props

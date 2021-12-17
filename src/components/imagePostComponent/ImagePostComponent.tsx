@@ -1,11 +1,18 @@
 import './imagePostComponent.css'
 
-const ImagePostComponent = (): JSX.Element => {
+type Props = { image: string }
+const ImagePostComponent = (props: Props): JSX.Element => {
+  const { image } = props
+
+  const decodeImageUrl = (urlEncoded: string): string => {
+    return urlEncoded.replace('amp;s', 's')
+  }
+
   return (
     <>
       <img
         className="img-post"
-        src="https://i.redd.it/lzjti8o0ip581.jpg"
+        src={image && decodeImageUrl(image)}
         alt="picture_article"
       />
     </>
