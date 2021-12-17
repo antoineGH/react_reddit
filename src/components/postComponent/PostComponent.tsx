@@ -15,7 +15,7 @@ const PostComponent = (props: Props): JSX.Element => {
       <Card className="card-post">
         <Row>
           <Col span={3} className="col-rate">
-            <RatePostComponent ups={post.ups} />
+            <RatePostComponent id={post.id} ups={post.ups} />
           </Col>
           <Col span={21}>
             <Row>

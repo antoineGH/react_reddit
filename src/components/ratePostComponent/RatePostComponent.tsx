@@ -6,21 +6,21 @@ import RateUp from './rateUp/RateUp'
 import RateDown from './rateDown/RateDown'
 import './ratePostComponent.css'
 
-type Props = { ups: number }
+type Props = { id: string; ups: number }
 const RatePostComponent = (props: Props): JSX.Element => {
-  const { ups } = props
+  const { id, ups } = props
   const [vote, setVote] = useState<vote>('')
 
   return (
     <>
       <Row>
-        <RateUp vote={vote} setVote={setVote} />
+        <RateUp id={id} vote={vote} setVote={setVote} />
       </Row>
       <Row>
         <RateCount count={ups} vote={vote} />
       </Row>
       <Row>
-        <RateDown vote={vote} setVote={setVote} />
+        <RateDown id={id} vote={vote} setVote={setVote} />
       </Row>
     </>
   )

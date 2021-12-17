@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Posts } from 'types/post'
+import { Posts, ActionVote } from 'types/post'
 import { getPosts } from '../api/posts'
 
 const initialState = { posts: {}, isLoadingPosts: false, hasErrorPosts: false }
@@ -9,7 +9,14 @@ export const loadPosts = createAsyncThunk('posts/getPosts', getPosts)
 export const posts = createSlice({
   name: 'posts',
   initialState,
-  reducers: {},
+  reducers: {
+    voteStore: (state, action: PayloadAction<ActionVote>) => {
+      const { id, vote } = action.payload
+      console.log('vote!')
+      console.log(id)
+      console.log(vote)
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(loadPosts.fulfilled, (state, action: PayloadAction<Posts>) => {
@@ -28,4 +35,5 @@ export const posts = createSlice({
   },
 })
 
+export const { voteStore } = posts.actions
 export default posts.reducer

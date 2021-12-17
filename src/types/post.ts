@@ -6,6 +6,11 @@ export interface PostsSlice {
   hasErrorPosts: boolean
 }
 
+export interface ActionVote {
+  id: string
+  vote: boolean
+}
+
 export interface Posts {}
 
 export interface Post {
