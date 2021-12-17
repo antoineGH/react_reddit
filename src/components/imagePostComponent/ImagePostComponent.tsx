@@ -1,12 +1,9 @@
 import './imagePostComponent.css'
+import { decodeImageUrl } from '../../utils/decodeImage'
 
 type Props = { image: string }
 const ImagePostComponent = (props: Props): JSX.Element => {
   const { image } = props
-
-  const decodeImageUrl = (urlEncoded: string): string => {
-    return urlEncoded.replace('amp;s', 's')
-  }
 
   return (
     <>

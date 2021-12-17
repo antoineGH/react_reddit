@@ -6,10 +6,18 @@ export const getPosts = async (): Promise<Posts> => {
 
   return new Promise((resolve, reject) => {
     if (json) {
-      const postsFiltered = json.data.children.map((elem: DataBloated) => {
-        return elem.data
+      const posts = json.data.children.map((elem: DataBloated) => {
+        return {
+          author: elem?.data?.author,
+          ups: elem?.data?.ups,
+          title: elem?.data?.title,
+          num_comments: elem?.data?.num_comments,
+          image: elem?.data?.preview?.images[0]?.source?.url,
+          created_utc: elem?.data?.created_utc,
+        }
       })
-      json.hasOwnProperty('kind') && resolve(postsFiltered)
+
+      json.hasOwnProperty('kind') && resolve(posts)
     }
     reject()
   })

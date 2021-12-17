@@ -4,9 +4,9 @@ import RatePostComponent from 'components/ratePostComponent/RatePostComponent'
 import ImagePostComponent from 'components/imagePostComponent/ImagePostComponent'
 import FooterPostComponent from 'components/footerPostComponent/FooterPostComponent'
 import './postComponent.css'
-import { PostArray } from '../../types/post'
+import { Post } from '../../types/post'
 
-type Props = { post: PostArray }
+type Props = { post: Post }
 const PostComponent = (props: Props): JSX.Element => {
   const { post } = props
 
@@ -25,9 +25,7 @@ const PostComponent = (props: Props): JSX.Element => {
             </Row>
             <Row>
               <Col>
-                <ImagePostComponent
-                  image={post.preview?.images[0]?.source?.url}
-                />
+                <ImagePostComponent image={post.image} />
               </Col>
             </Row>
             <Row>
