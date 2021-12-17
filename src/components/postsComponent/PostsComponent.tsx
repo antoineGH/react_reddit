@@ -14,9 +14,6 @@ const PostsComponent = (): JSX.Element => {
   const isLoadingPosts = useAppSelector(getIsLoadingPosts)
   const hasErrorPosts = useAppSelector(getHasErrorPosts)
 
-  console.log('posts')
-  console.log(posts)
-
   useEffect(() => {
     dispatch(loadPosts())
   }, [dispatch])
@@ -29,8 +26,6 @@ const PostsComponent = (): JSX.Element => {
         <p>loading Posts</p>
       ) : (
         Object.values(posts).map(post => {
-          console.log('YAYA')
-          console.log(post)
           return <PostComponent post={post} />
         })
       )}
